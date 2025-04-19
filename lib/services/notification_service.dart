@@ -117,4 +117,18 @@ class NotificationService {
               : null,
     );
   }
+
+  static Future<void> startPeriodicNotifications() async {
+    await AwesomeNotifications().cancelAllSchedules(); // Clear old schedules
+
+    // Show first notification immediately
+    await showNotification(
+      title: "Auto-Notification",
+      body: "This is your 2-minute reminder!",
+      scheduled: true,
+      interval: Duration(minutes: 2), // Repeat every 2 mins
+    );
+
+    debugPrint("Periodic notifications started (every 2 minutes)");
+  }
 }

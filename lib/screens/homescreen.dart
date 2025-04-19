@@ -99,9 +99,9 @@ class Homescreen extends StatelessWidget {
               onpressed: () async {
                 await NotificationService.showNotification(
                   title: "Scheduled Notification",
-                  body: "Notification Was fired after 5 seconds",
+                  body: "Notification Was fired after 50 seconds",
                   scheduled: true,
-                  interval: Duration(seconds: 5),
+                  interval: Duration(seconds: 50),
                 );
               },
               text: "Scheduled Notification",
